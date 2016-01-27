@@ -32,7 +32,6 @@ for (i in 1:ncol(independent_tab))
   }
   
 }
-
 num_summary<-data.frame(t(subset(num_summary,select=-1)))
 names(num_summary)=c(t(summry_measure))
 ColumnNames<-row.names(num_summary)
