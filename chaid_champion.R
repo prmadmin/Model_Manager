@@ -185,7 +185,7 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
   tot.bad<-max(ks_table$cum.bad.tot)
   
   summary_file<-paste(acknowledgement,"summary.txt",sep="_")
-  
+  output_file<-paste(acknowledgement,"output.txt",sep="_")
   
   if ("ks" %in% reqd_tests==TRUE)
   {
@@ -294,7 +294,7 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
     
     ks_output<-data.frame(testName="ks",csv_path=paste(acknowledgement,csv_path=c('ks.txt','ks_g.txt'),sep="_"),graph=c('no','yes'),heading=c('KS TABLE','Bad-Good Capture Graph'),conclusion='',interpretation='',yAxisLabel=c('',''))
     
-    output_file<-paste(acknowledgement,"output.txt",sep="_")
+   
     
     if(output_file %in% list.files()==TRUE) {write.table(ks_output,output_file,quote=F,sep='|',row.names=F,append=T,col.names=F)} else
     {write.table(ks_output,output_file,quote=F,sep='|',row.names=F,append=T,col.names=T)}
@@ -472,6 +472,10 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
 }
 
 Goodness_of_fit(PredProb,ActualOutcome,acknowledgement,reqd_tests)
+}
+
+
+chaid_pred(listjson,ord,reqd_tests,acknowledgement) 
 
 run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='RED')
 write.table(run_details,paste(paste(acknowledgement,"run_details",sep='_'),"txt",sep='.'),quote=F,sep="|",row.names=FALSE)
