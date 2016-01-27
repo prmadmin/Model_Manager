@@ -357,7 +357,7 @@ Linear_Regression_Champion<-function(parameters,response_file,intercept,required
 
 
 
-run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='GREEN')
+run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='AMBER')
 write.table(run_details,paste(paste(acknowledgement,"run_details",sep='_'),"txt",sep='.'),sep="|",row.names=F,quote=F)
 
 
