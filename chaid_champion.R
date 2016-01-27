@@ -14,7 +14,7 @@ library(caret,lib.loc=libpath)
 
 ################################################# CONNECTION PART ###########################################
 setwd("../conf/files")
-#setwd("/home/hduser/Documents/Pabitra/R Files")
+#setwd("/Users/prithwirajmukherjee/Documents/Pabitra Database/prm-model-testbench/conf/files")
 print(getwd())
 #list.files()
 #  listjson<-fromJSON("45e3d47e-f23a-4386-9955-6f2bb0247644_filename.json")
@@ -460,7 +460,7 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
     
     #sen_spec_summary<-data.frame(testname="",heading='',interpretation='')
     
-    sen_spec_output<-data.frame(testName="sen_spec",paste(acknowledgement,csv_path=c('sen_spec.txt','sen_spec_g.txt'),sep="_"),graph=c('no','yes'),heading=c('Specificity, Sensitivity, Accuracy,Precesion  by Score Cut-Offs','Specificity, Sensityvity,Accuracy and ROC Graph'),conclusion='',interpretation='',yAxisLabel=c('',''))
+    sen_spec_output<-data.frame(testName="sen_spec",paste(acknowledgement,csv_path=c('sen_spec.txt','sen_spec_g.txt'),sep="_"),graph=c('no','yes'),heading=c('Specificity, Sensitivity, Accuracy,Precesion  by Score Cut-Offs','Specificity, Sensitivity,Accuracy Graph'),conclusion='',interpretation='',yAxisLabel=c('',''))
     
     output_file<-paste(acknowledgement,"output.txt",sep="_")
     
@@ -474,8 +474,8 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
 Goodness_of_fit(PredProb,ActualOutcome,acknowledgement,reqd_tests)
 }
 
-
 chaid_pred(listjson,ord,reqd_tests,acknowledgement) 
 
-run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='RED')
+run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='GREEN')
 write.table(run_details,paste(paste(acknowledgement,"run_details",sep='_'),"txt",sep='.'),quote=F,sep="|",row.names=FALSE)
+
