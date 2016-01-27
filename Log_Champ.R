@@ -8,7 +8,7 @@ library(caret,lib.loc=libpath)
 
 ################################################# CONNECTION PART ###########################################
 
-# setwd("/Users/prithwirajmukherjee/Documents/Pabitra\ Database/prm-model-testbench/conf/files")
+# setwd("/Users/prithwirajmukherjee/Documents/sandbox/workspace/27-01-2016/prm-model-testbench/conf/files")
 setwd("../conf/files")
 args<-commandArgs(T)
 data<-args[1]
@@ -16,7 +16,7 @@ data<-args[1]
 acknowledgement<-as.character(args[2])
 
 #data<-'{"ivDumpFile":"65f10d66-6983-451a-9fc3-5eb972d4d865_iv_dump.csv","testCases":[{"name":"ginny","threshold":0.125},{"name":"ks","threshold":0.25},{"name":"sen_spec","threshold":0.25}],"technique":"Logistic Regression","responseDumpFile":"65f10d66-6983-451a-9fc3-5eb972d4d865_response_dump.csv","functionalClassification":"PD","params":[{"attrId":"465ebbbb-6654-4293-80b5-8a59b5c1b1f0","name":"RaboBankData_Duration","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"7f6ccce2-6b25-412b-a01e-5cca4af09fa1","name":"RaboBankData_TransactionCount","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"7862bb7c-3269-4912-9488-e915b3794355","name":"RaboBankData_nflag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"ce907450-4797-492e-8457-bcb6f1c873e3","name":"RaboBankData_LiquidAssests","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"f1a584f8-9eca-4584-812e-7aabc3af8858","name":"RaboBankData_student2flag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"ce907450-4797-492e-8457-bcb6f1c873e3","name":"RaboBankData_LiquidAssests","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"465ebbbb-6654-4293-80b5-8a59b5c1b1f0","name":"RaboBankData_Duration","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"09e71aad-c5ed-4639-bb71-f5cea9e4a9f5","name":"RaboBankData_homeflag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"d1781f31-cb44-4982-ad09-b5ea61e69242","name":"RaboBankData_NegativeBalance","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"ec373b5d-a40c-45e8-a26f-1b9a43fe78f2","name":"RaboBankData_CustomerID","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"09e71aad-c5ed-4639-bb71-f5cea9e4a9f5","name":"RaboBankData_homeflag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"0896a9c9-fd1b-4fa9-9202-34d75b2565c4","name":"RaboBankData_student1flag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"5d47abf9-0b19-4075-af87-926589d9576d","name":"RaboBankData_kindflag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"7f6ccce2-6b25-412b-a01e-5cca4af09fa1","name":"RaboBankData_TransactionCount","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"d1781f31-cb44-4982-ad09-b5ea61e69242","name":"RaboBankData_NegativeBalance","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"5d47abf9-0b19-4075-af87-926589d9576d","name":"RaboBankData_kindflag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"ec373b5d-a40c-45e8-a26f-1b9a43fe78f2","name":"RaboBankData_CustomerID","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"7862bb7c-3269-4912-9488-e915b3794355","name":"RaboBankData_nflag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"39ba0f49-a16c-4e6a-bf5f-5cb28b205351","name":"RaboBankData_pdflag","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"39ba0f49-a16c-4e6a-bf5f-5cb28b205351","name":"RaboBankData_pdflag","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"0896a9c9-fd1b-4fa9-9202-34d75b2565c4","name":"RaboBankData_student1flag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"},{"attrId":"f1a584f8-9eca-4584-812e-7aabc3af8858","name":"RaboBankData_student2flag1","entityId":"51648edc-6418-4082-a3c3-2a2a57124508"}],"calibrationValues":[],"requestId":"65f10d66-6983-451a-9fc3-5eb972d4d865","industries":[],"challenge":false,"schemeDumpFile":"65f10d66-6983-451a-9fc3-5eb972d4d865_scheme_dump.csv","interceptValue":"-2.318","dataSource":null,"linkedColumn":"RaboBankData_CustomerID","dataSrc":{"password":"tectes","driver":"com.mysql.jdbc.Driver","dbname":"StagingDB","port":"3306","columns":null,"host":"jdbc:mysql://127.0.0.1:3306","user":"root","table":"StagingTable"}}'
-# data<-"fd948267-ffe6-4f9e-86d2-1609ac9c1bc0_filename.json"
+# data<-"3c36e763-ba0b-40ee-90ba-85793671462d_filename.json"
 print(data)
 listjson<-fromJSON(data)
 detach(package:jsonlite, unload = TRUE)
@@ -286,7 +286,8 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
   tot.bad<-max(ks_table$cum.bad.tot)
   
   summary_file<-paste(acknowledgement,"summary.txt",sep="_")
-  
+  output_file<-paste(acknowledgement,"output.txt",sep="_")
+
   
   if ("ks" %in% reqd_tests==TRUE)
   {
@@ -395,8 +396,7 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
     
     ks_output<-data.frame(testName="ks",csv_path=paste(acknowledgement,csv_path=c('ks.txt','ks_g.txt'),sep="_"),graph=c('no','yes'),heading=c('KS TABLE','Bad-Good Capture Graph'),conclusion='',interpretation='',yAxisLabel=c('',''))
     
-    output_file<-paste(acknowledgement,"output.txt",sep="_")
-    
+        
     if(output_file %in% list.files()==TRUE) {write.table(ks_output,output_file,quote=F,sep='|',row.names=F,append=T,col.names=F)} else
     {write.table(ks_output,output_file,quote=F,sep='|',row.names=F,append=T,col.names=T)}
     
@@ -561,9 +561,9 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
     
     #sen_spec_summary<-data.frame(testname="",heading='',interpretation='')
     
-    sen_spec_output<-data.frame(testName="sen_spec",paste(acknowledgement,csv_path=c('sen_spec.txt','sen_spec_g.txt'),sep="_"),graph=c('no','yes'),heading=c('Specificity, Sensitivity, Accuracy,Precesion  by Score Cut-Offs','Specificity, Sensityvity,Accuracy and ROC Graph'),conclusion='',interpretation='',yAxisLabel=c('',''))
+    sen_spec_output<-data.frame(testName="sen_spec",paste(acknowledgement,csv_path=c('sen_spec.txt','sen_spec_g.txt'),sep="_"),graph=c('no','yes'),heading=c('Specificity, Sensitivity, Accuracy,Precesion  by Score Cut-Offs','Specificity, Sensitivity,Accuracy Graph'),conclusion='',interpretation='',yAxisLabel=c('',''))
     
-    output_file<-paste(acknowledgement,"output.txt",sep="_")
+    
     
     if(output_file %in% list.files()==TRUE) {write.table(sen_spec_output,output_file,quote=F,sep='|',row.names=F,append=T,col.names=F)} else
     {write.table(sen_spec_output,output_file,quote=F,sep='|',row.names=F,append=T,col.names=T)}
@@ -571,9 +571,10 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
   }
   
 }
+
+#acknowledgement="ppppppp"
 Goodness_of_fit(PredProb,ActualOutcome,acknowledgement,reqd_tests)
 
 run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='GREEN')
-
 write.table(run_details,paste(paste(acknowledgement,"run_details",sep='_'),"txt",sep='.'),quote=F,sep="|",row.names=FALSE)
 
