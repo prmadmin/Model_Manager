@@ -355,13 +355,13 @@ Linear_Regression_Champion<-function(parameters,response_file,intercept,required
   
 }
 
+Linear_Regression_Champion(parameters,response_file,intercept,required_tests)
 
-
-run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='AMBER')
+run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='GREEN')
 write.table(run_details,paste(paste(acknowledgement,"run_details",sep='_'),"txt",sep='.'),sep="|",row.names=F,quote=F)
 
 
 #acknowledgement<-'test'
 
 #library(rjson)
-Linear_Regression_Champion(parameters,response_file,intercept,required_tests)
+
