@@ -473,5 +473,5 @@ Goodness_of_fit<-function(PredProb,ActualOutcome,acknowledgement,reqd_tests)
 
 Goodness_of_fit(PredProb,ActualOutcome,acknowledgement,reqd_tests)
 
-run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='GREEN')
+run_details<-data.frame(RunId='2',acknowledgement_id=acknowledgement,rag='RED')
 write.table(run_details,paste(paste(acknowledgement,"run_details",sep='_'),"txt",sep='.'),quote=F,sep="|",row.names=FALSE)
